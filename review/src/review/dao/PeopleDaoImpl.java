@@ -42,6 +42,13 @@ public class PeopleDaoImpl implements PeopleDao {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                conn.close();
+                pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return listPeople;
     }
@@ -65,6 +72,13 @@ public class PeopleDaoImpl implements PeopleDao {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                conn.close();
+                pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return p;
     }
@@ -84,6 +98,13 @@ public class PeopleDaoImpl implements PeopleDao {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                conn.close();
+                pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         if (rs == 1){
             return true;
@@ -111,6 +132,13 @@ public class PeopleDaoImpl implements PeopleDao {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                conn.close();
+                pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
         if (rs == 1){
@@ -133,6 +161,13 @@ public class PeopleDaoImpl implements PeopleDao {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                conn.close();
+                pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         if (rs==1) {
             return true;

@@ -77,6 +77,7 @@
     </style>
 </head>
 <body>
+
 <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -134,7 +135,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="/images/1.jpg" alt="1 slide">
+            <img src="/images/chrome-big.jpg" alt="1 slide">
             <div class="carousel-caption">
                 <h1>Chrome</h1>
                 <p>Google浏览器，Google Chrome，中国大陆官方译名：酷容浏览器（原网上叫做谷歌浏览器</p>
@@ -142,7 +143,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="/images/2.jpg" alt="2 slide">
+            <img src="/images/firefox-big.jpg" alt="2 slide">
             <div class="carousel-caption">
                 <h1>Firefox</h1>
                 <p>Mozilla Firefox，中文俗称"火狐"(正式缩写为Fx或fx，非正式缩写为FF)，是一个自由及开放源代码网页浏览器</p>
@@ -150,7 +151,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="/images/3.jpg" alt="3 slide">
+            <img src="/images/opera-big.jpg" alt="3 slide">
             <div class="carousel-caption">
                 <h1>Opera</h1>
                 <p>Opera浏览器，是一款挪威Opera Software ASA公司制作的支持多页面标签式浏览的网络浏览器</p>
@@ -158,7 +159,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="/images/4.jpg" alt="4 slide">
+            <img src="/images/ie-big.jpg" alt="4 slide">
             <div class="carousel-caption">
                 <h1>Safari</h1>
                 <p>Safari,苹果计算机的最新操作系统Mac OS X中新的浏览器</p>

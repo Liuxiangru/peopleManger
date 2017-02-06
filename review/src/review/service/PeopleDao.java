@@ -2,6 +2,7 @@ package review.service;
 
 import review.entity.People;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -15,7 +16,7 @@ public interface PeopleDao {
     public People queryPeopleByPid(int pid);
 
     //增加一个人
-    public boolean addPeople(People p);
+    public boolean addPeople(People p) throws SQLException;
 
     //修改一个人
     public boolean updatePeople(People p);

@@ -42,6 +42,11 @@
         }
     </style>
     <script type="text/javascript">
+        function index() {
+            window.location.href="logout.jsp";
+        }
+
+
         function register() {
             window.location.href = "register.jsp";
         }
@@ -54,17 +59,21 @@
             window.location.href = "add.jsp";
         }
         function deleteById(pid) {
-
             if (confirm("确定删除这个人么")) {
                 window.location.href = "deleteServlet?pid=" + pid;
             }
 
         }
+        $(".pagination").pagy({
+            totalPages: 20,
+            currentPage: 1
+        });
     </script>
     <%
         PeopleDao pdi = new PeopleDaoImpl();
         ArrayList<People> peopleList = pdi.queryAllPeople();
         System.out.println("peopleList.size()" + peopleList.size());
+
     %>
     <%--<% String account = (String)request.getSession().getAttribute("account"); %>--%>
 </head>
@@ -99,6 +108,7 @@
                 <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
                 <li>
                     <form class="navbar-form navbar-left" role="search" method="post" action="controller/LoginAction">
+
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Account" name="account">
                         </div>
@@ -109,6 +119,7 @@
                         <button type="button" class="btn btn-default" onclick="register()">Register</button>
                         <button type="button" class="btn btn-default" onclick="index()">安全退出</button>
                     </form>
+
                 </li>
                 <li>
                     <p id="p1">
@@ -176,6 +187,27 @@
                     }
                 %>
             </table>
+            <div align="center">
+            <nav aria-label="Page navigation" >
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
         </div>
     </div>
 </div>

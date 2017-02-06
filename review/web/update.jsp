@@ -26,9 +26,12 @@
     </style>
     <script type="text/javascript">
         function register() {
-            window.location.href = "index.jsp";
+            window.location.href = "register.jsp";
         }
 
+        function index() {
+            window.location.href="index.jsp";
+        }
         function update() {
             window.location.href = "update.jsp";
         }
