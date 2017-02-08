@@ -21,6 +21,7 @@ import java.sql.SQLException;
 @WebServlet(name = "LoginAction")
 public class LoginAction extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String account = request.getParameter("account");
         String password = request.getParameter("password");
         System.out.println("account"+account);
@@ -58,10 +59,7 @@ public class LoginAction extends HttpServlet {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        finally {
+        }finally {
             try {
                 if (pstmt != null) {
                     pstmt.close();

@@ -37,8 +37,6 @@ public class PeopleDaoImpl implements PeopleDao {
                 p.setAge(rs.getInt("age"));
                 listPeople.add(p);
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -68,8 +66,6 @@ public class PeopleDaoImpl implements PeopleDao {
                 p.setSex(rs.getString("sex"));
                 p.setAge(rs.getInt("age"));
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -94,8 +90,6 @@ public class PeopleDaoImpl implements PeopleDao {
             pstmt.setString(2,p.getSex());
             pstmt.setInt(3,p.getAge());
             rs = pstmt.executeUpdate();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -128,8 +122,6 @@ public class PeopleDaoImpl implements PeopleDao {
             pstmt.setInt(4,p.getPid());
             rs = pstmt.executeUpdate();
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -157,9 +149,7 @@ public class PeopleDaoImpl implements PeopleDao {
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1,p);
             rs =pstmt.executeUpdate();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        }  catch (SQLException e) {
             e.printStackTrace();
         }finally {
             try {

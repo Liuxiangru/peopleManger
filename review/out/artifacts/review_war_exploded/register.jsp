@@ -142,18 +142,14 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Remember me
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-success">Submit</button>
                 </div>
             </div>
+            <p align="center">
+                <% if (request.getSession().getAttribute("tip")!=null){%>
+                <%= request.getSession().getAttribute("tip")%>
+                <%}%>
+            </p>
         </form>
         </div>
     </div>

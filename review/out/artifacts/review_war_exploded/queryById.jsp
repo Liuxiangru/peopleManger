@@ -81,7 +81,7 @@
     <tr>
         <td colspan="5" align="center">ID为<%=p.getPid()%>的People</td>
     </tr>
-    
+
     <tr>
     <td><%=p.getPid()%>
     </td>

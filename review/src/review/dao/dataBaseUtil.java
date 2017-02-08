@@ -14,9 +14,13 @@ public class dataBaseUtil {
     /**
      * @return 返回Connection
      */
-    public static Connection getConnection() throws ClassNotFoundException {
+    public static Connection getConnection()  {
         Connection conn = null;
-        Class.forName("com.mysql.jdbc.Driver");
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         if (null == conn) {
             try {
                 conn = DriverManager.getConnection(url, userName, passWord);

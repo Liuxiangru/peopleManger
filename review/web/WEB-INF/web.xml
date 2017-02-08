@@ -73,7 +73,7 @@
         <filter-class>review.filter.LoginFilter</filter-class>
         <init-param>
             <param-name>noFilter</param-name>
-            <param-value>index.jsp;loginfail.jsp;LoginAction</param-value>
+            <param-value>index.jsp;loginfail.jsp;LoginAction;register.jsp;Register</param-value>
         </init-param>
     </filter>
     <filter-mapping>
