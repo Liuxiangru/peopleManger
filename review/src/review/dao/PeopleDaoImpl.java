@@ -1,7 +1,6 @@
 package review.dao;
 
 import review.entity.People;
-import review.service.PeopleDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -63,6 +62,7 @@ public class PeopleDaoImpl implements PeopleDao {
             rs = pstmt.executeQuery();
 
             while (rs.next()){
+                System.out.println(rs.getInt("pid"));
                 p.setPid(rs.getInt("pid"));
                 p.setName(rs.getString("name"));
                 p.setSex(rs.getString("sex"));

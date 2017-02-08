@@ -2,6 +2,8 @@ package review.controller;
 
 import review.dao.PeopleDaoImpl;
 import review.entity.People;
+import review.service.PeopleService;
+import review.service.PeopleServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +19,7 @@ public class updateServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         //声明
         People p = new People();
-        PeopleDaoImpl pdi =new PeopleDaoImpl();
+        PeopleService psi = new PeopleServiceImpl();
         //获取
         int  pid= Integer.parseInt(request.getParameter("pid"));
         String  name=  request.getParameter("name");
@@ -29,7 +31,7 @@ public class updateServlet extends HttpServlet {
         p.setSex(sex);
         p.setAge(age);
         //调用更新
-        boolean d = pdi.updatePeople(p);
+        boolean d = psi.updatePeople(p);
         if (d==true){
             response.sendRedirect(request.getContextPath() + "/loginsuccess.jsp");
         }else{

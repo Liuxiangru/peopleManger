@@ -6,10 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="review.dao.PeopleDaoImpl" contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="review.service.PeopleDao" %>
-<%@ page import="review.dao.PeopleDaoImpl" %>
+<%@ page import="review.dao.PeopleDao" %>
 <%@ page import="review.entity.People" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="review.service.PeopleService" %>
+<%@ page import="review.service.PeopleServiceImpl" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -70,8 +71,9 @@
         });
     </script>
     <%
-        PeopleDao pdi = new PeopleDaoImpl();
-        ArrayList<People> peopleList = pdi.queryAllPeople();
+
+        PeopleService psi = new PeopleServiceImpl();
+        ArrayList<People> peopleList = psi.queryAllPeople();
         System.out.println("peopleList.size()" + peopleList.size());
 
     %>
@@ -133,7 +135,7 @@
 </nav>
 
 <div class="container">
-    <div class="row">
+
         <div class="col-md-6 col-md-offset-3" id="div-top">
             <form action="controller/queryByidServlet" method="post">
             <div class="input-group">
@@ -209,7 +211,7 @@
             </nav>
             </div>
         </div>
-    </div>
+
 </div>
 </body>
 </html>

@@ -21,7 +21,6 @@
     <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>
     <%
         People p = (People) request.getSession().getAttribute("p");
-        System.out.println("jjjjjjjjsp"+p.getAge());
     %>
 </head>
 <body>

@@ -2,6 +2,8 @@ package review.controller;
 
 import review.dao.PeopleDaoImpl;
 import review.entity.People;
+import review.service.PeopleService;
+import review.service.PeopleServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,11 +16,11 @@ import java.io.IOException;
  */
 public class deleteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PeopleDaoImpl pdi =new PeopleDaoImpl();
+        PeopleService psi = new PeopleServiceImpl();
 
         int  pid= Integer.parseInt(request.getParameter("pid"));
 
-        boolean  d= pdi.deletePeopleById(pid);
+        boolean  d= psi.deletePeopleById(pid);
         if (d==true){
             response.sendRedirect(request.getContextPath() + "/loginsuccess.jsp");
         }else{

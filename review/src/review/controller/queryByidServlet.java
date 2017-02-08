@@ -2,14 +2,15 @@ package review.controller;
 
 import review.dao.PeopleDaoImpl;
 import review.entity.People;
-import review.service.PeopleDao;
+import review.dao.PeopleDao;
+import review.service.PeopleService;
+import review.service.PeopleServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -18,20 +19,19 @@ import java.io.IOException;
 @WebServlet(name = "queryByidServlet")
 public class queryByidServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PeopleDao pdi =new PeopleDaoImpl();
+        PeopleService psi = new PeopleServiceImpl();
 
         int  pid= Integer.parseInt(request.getParameter("pid"));
 
-        People p= pdi.queryPeopleByPid(pid);
+        People p= psi.queryPeopleByPid(pid);
 
         request.getSession().setAttribute("p",p);
 
-//        session
-
-        System.out.println("pname---"+p.getName());
-
-        if (p!=null){
+        if (p.getName()!=null){
             response.sendRedirect(request.getContextPath()+"/queryById.jsp");
+        }
+        else {
+            response.sendRedirect(request.getContextPath()+"/queryByIdFail.jsp");
         }
     }
 
