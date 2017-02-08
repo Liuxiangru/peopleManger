@@ -22,12 +22,57 @@
     </script>
 </head>
 <body>
-<div class="container">
-    <div class="col-md-6 col-md-offset-4">
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a  class="navbar-brand" href="/index.jsp">PeoPle管理</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">综述</a></li>
+                <li><a href="#">简述</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">特点<span class="caret"></span></a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" >
+                        <li><a href="#chrome" data-tab="chrome">Chrome</a></li>
+                        <li><a href="#firefox" data-tab="firefox">Firefox</a></li>
+                        <li><a href="#opera" data-tab="opera">Opera</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#safari" data-tab="safari">Safari</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+                <li>
+                    <form class="navbar-form navbar-left" role="search" method="post" action="controller/LoginAction">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Account" name="account">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" name="password">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="button" class="btn btn-default" onclick="register()">Register</button>
+                    </form>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
         <div class="jumbotron">
-            <h1>无该ID的People</h1>
-            <P>没有查询到该该ID的People,5秒后将自动跳转,如果没有跳转请点击跳转按钮</P>
-            <p><a class="btn btn-primary btn-lg" href="loginsuccess.jsp" role="button">跳转</a></p>
+            <div class="container">
+                <div class="col-md-9 col-md-offset-2">
+            <h1 align="center">无该ID的People</h1>
+            <P align="center">没有查询到该该ID的People,5秒后将自动跳转,如果没有跳转请点击跳转按钮</P>
+            <p align="center"><a class="btn btn-primary btn-lg" href="loginsuccess.jsp" role="button">跳转</a></p>
         </div>
     </div>
 </div>
